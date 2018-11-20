@@ -4,6 +4,10 @@
     <h2>Essential Links</h2>
     <ul>
       <li>
+        <button v-on:click="greet">test mock</button>
+        <router-link to="/layout">go to layout</router-link>
+      </li>
+      <li>
         <a
           href="https://vuejs.org"
           target="_blank"
@@ -84,11 +88,22 @@
 </template>
 
 <script>
+import axios from 'axios'
+import router from '../router/index.js'
+
+// Vue.use(router)
+
 export default {
   name: 'HelloWorld',
   data () {
     return {
       msg: 'Welcome to Your Vue.js App'
+    }
+  },
+  methods: {
+    greet: function () {
+      router.push('layout')
+      axios.post('/api/people', {}).then(m => console.log(m.data))
     }
   }
 }
