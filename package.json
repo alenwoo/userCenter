@@ -11,10 +11,11 @@
     "test": "npm run unit",
     "lint": "eslint --ext .js,.vue src test/unit",
     "build": "node build/build.js",
-    "mock":"json-server --watch mock/db.json",
-    "mockdev":"npm run mock & npm run dev"
+    "mock": "json-server --watch mock/db.json --m mock/post-to-get.js",
+    "mockdev": "npm run mock & npm run dev"
   },
   "dependencies": {
+    "faker": "^4.1.0",
     "iview": "^3.1.5",
     "vue": "^2.5.2",
     "vue-router": "^3.0.1"
